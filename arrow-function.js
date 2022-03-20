@@ -32,3 +32,12 @@ const user = {
 }
 
 user.kenalkan("kadek Frama");   // memanggil value dari property kenalkan pada object user.
+
+
+
+// arrow function yang menerapkan dua parameter.
+ const sayHay = (myName, greeting) => {
+    document.writeln(`Hallo ${myName}, ${greeting} !`);
+ }
+
+ sayHay("Kadek Frama", "Tetap Semangat !");
