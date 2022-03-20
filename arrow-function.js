@@ -1,13 +1,16 @@
 
 // Reguler Function.
 function sayHello(greet){
-    console(`${greet}!`);
+    console.info(`${greet}!`);
 }
 
 // Function sebagai expression. (atau disebut dengan anonymous function).
 const sayName = function (name){
     console.info(`Nama saya ${name}`);
 }
+
+sayHello("greets!");
+sayName("kadek");
 
 
 // Arrow function.
@@ -22,7 +25,10 @@ const sayNamanya = name => console.info(`Nama saya ${name}`);
 // Contoh arrow function disimpan sebagai parameter.
 ["Dimas", "Widdy", "Buchori"].forEach(nama => console.info(`Nama saya adalah ${nama}`));
 
+
 // Constoh arrow function sebagai value dari property object.
 const user = {
-    introduce: namay => console.info(`Nama saya ${namay}`),
+    kenalkan: namay => console.info(`Nama saya ${namay}`),
 }
+
+user.kenalkan("kadek Frama");   // memanggil value dari property kenalkan pada object user.
