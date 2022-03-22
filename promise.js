@@ -45,4 +45,5 @@ const handlerRejected = rejectionReason => {
 
 
 const makeCoffee = new Promise(executorFunction);
-makeCoffee.then(handlerSuccess, handlerRejected);       // penempatan paramter onFulfilled dan onRejected sebagai parameter pada .then().
+makeCoffee.then(handlerSuccess, handlerRejected);       // penempatan paramter onFulfilled dan onRejected sebagai parameter pada .then(). Dengan begitu kita dapat menangani object Promise meskipun dalam kondisi rejected.
+
