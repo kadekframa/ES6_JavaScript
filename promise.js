@@ -44,6 +44,21 @@ const handlerRejected = rejectionReason => {
 }
 
 
-const makeCoffee = new Promise(executorFunction);
-makeCoffee.then(handlerSuccess, handlerRejected);       // penempatan paramter onFulfilled dan onRejected sebagai parameter pada .then(). Dengan begitu kita dapat menangani object Promise meskipun dalam kondisi rejected.
+// const makeCoffee = new Promise(executorFunction);
+// makeCoffee.then(handlerSuccess, handlerRejected);       // penempatan paramter onFulfilled dan onRejected sebagai parameter pada .then(). Dengan begitu kita dapat menangani object Promise meskipun dalam kondisi rejected.
 
+
+/*  Menerapkan prinsip separation of concerns untuk menulis kode dengan baik. Separation of concerns artinya pemisahan permasalahan.
+    Pemisahan permasalahan ini berarti mengorganisasikan kode ke dalam bagian-bagian yang berbeda berdasarkan tugas tertentu.
+    Hal ini akan memudahkan kita kelak mencari kode yang salah jika aplikasi tidak bekerja dengan baik.
+    Dalam penerapan prinsip ini kita dapat menggunakan method .catch() yang hanya dapat menerima satu parameter function yang digunakan untuk rejected handler.
+    Method .catch() ini akan terpanggil bilamana objek promise memiliki kondisi onRejected.
+*/
+
+const makeCoffee = new Promise(executorFunction);
+makeCoffee
+    .then(handlerSuccess)
+    .catch(handlerRejected);                // method catch() untuk menerima parameter rejected handler.
+
+
+// NB: Dengan menerapkan method .catch(), kita dapat menerapkan prinsip separation of concerns.
