@@ -24,3 +24,7 @@ makeCoffee();
 /**
  * Output: Coffee didapatkan!
  */
+
+
+// NB:  Perlu jadi catatan bahwa await hanya akan mengembalikan nilai jika promise berhasil dilakukan (onFulfilled). Lantas bagaimana jika promise gagal dilakukan (onRejected)?
+//      Kita dapat menangani sebuah error atau tolakan dengan menggunakan try..catch.
