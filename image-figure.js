@@ -17,12 +17,17 @@ class ImageFigure extends HTMLElement{
     }
 
     attributeChangedCallback(name, oldValue, newValue){
-        console.info(`Attributed: ${name} changed!`);
+        console.info(`Attributed: ${name}, ${oldValue}, ${newValue} changed!`);
     }
 
 
+    // Digunakan untuk mengamati perubahan nilai attribute caption.
+    /*
+        Kita bisa menetapkan lebih dari satu atribut yang diamati dengan memisahkan nama atribut menggunakan koma.
+        contoh: return ["caption", "title", "src", ...];
+    */
     static get observedAttributes(){
-        return ["caption"];
+        return ["caption", "oldValue", "newValue"];
     }
 }
 
